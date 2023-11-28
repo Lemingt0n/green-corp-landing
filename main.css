@@ -42,6 +42,7 @@ header {
   }
    
   .about__sun-image {
+    animation: spin 1.5s ease-in-out infinite;
     width: 100px;
     height: 100px;
   }
@@ -133,36 +134,51 @@ header {
     outline: none;
   }
   footer {
-    padding: 90px 20px; /* внутренние отступы */
-    font-size: 16px; /* размер шрифта */
-    font-weight: 600; /* жирность шрифта */
-  }
+    padding: 90px 20px;
+    font-size: 16px;  
+    font-weight: 600;
+ }
   
-  .footer__links {
+ .footer__container {
     display: flex;
-    justify-content: center; /* центрирование по горизонтали */
-  }
+    justify-content: center;
+ }
   
-  .footer__copyright {
-    margin-top: 40px; /* отступ сверху */
-    text-align: center; /* центрирование текста */
-    opacity: 0.5; /* прозрачность элемента */
+ .footer__copy {
+    text-align: center;
+    opacity: 0.5;
+    margin-top: 40px;
+ }
+ .footer__group {
+  margin-right: 80px;
+}
+
+footer h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__links a {
+  margin-bottom: 15px;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
-  .footer__group {
-    margin-right: 80px; /* отступ справа */
+  to {
+    transform: rotate(360deg);
   }
-  
-  .footer__group h3 {
-    font-size: 16px; /* размер текста */
-    opacity: 0.7; /* прозрачность текста */
-    margin-bottom: 30px; /* внешний отступ снизу */
-  }
-  
-  .footer__links {
-    display: flex;
-    flex-direction: column; /* изменение направления расположения элементов на column */
-  }
-  
-  .footer__links a {
-    margin-bottom: 15px; /* внешний отступ снизу */
-  }
+}
+img.about__sun-image {
+  position: absolute;
+  animation-name: rotation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
